@@ -1,6 +1,7 @@
 # ANIME-APP
 
-https://jikan.moe/ - It's app will be display information about differents anime, their categories and sort them.
+### 'https://jikan.moe/' - It's app will be display information about differents anime, their categories and sort them.
+
 ---
 
 Below this text will be some feachs which must be realizing in app "ANIME-APP".
