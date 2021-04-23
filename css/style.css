@@ -1,0 +1,200 @@
+@charset "UTF-8";
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:active {
+  outline: none;
+}
+
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li,
+ol li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+
+/* HEADER */
+
+.header {
+  display: flex;
+  justify-content: center;
+
+  padding: 40px 0;
+
+  border: 10px solid black;
+}
+.headerH1 {
+  font-size: 70px;
+  font-weight: bold;
+}
+
+/* SECTION FORM */
+
+.sectionForm {
+  display: flex;
+
+  margin-top: -10px;
+  padding: 45px 0;
+}
+.sortForm {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.blockSearch {
+  display: flex;
+}
+
+.search {
+  width: 250px;
+
+  font-size: 16px;
+
+  padding: 5px 10px;
+
+  border: 1px solid black;
+}
+
+.formButton {
+  font-size: 18px;
+
+  margin-left: -1px;
+  padding: 10px 30px;
+
+  border: 1px solid black;
+}
+
+/* MAIN */
+
+.main {
+  display: flex;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+}
+
+.cardsItems {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  max-height: 350px;
+  min-width: 250px;
+  max-width: 200px;
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  margin-right: 10px;
+  margin-bottom: 80px;
+}
+
+.card img {
+  display: block;
+  margin: 0 auto;
+
+  width: 230px;
+  min-height: 300px;
+  max-height: 300px;
+}
+
+.cardItemContainer {
+  margin-top: 8px;
+}
+.cardItemH3 {
+  font-size: 18px;
+
+  margin-bottom: 7px;
+}
+
+.cardItemRating {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.cardItemText {
+  font-size: 13px;
+
+  padding: 1px;
+}

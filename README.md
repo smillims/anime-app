@@ -6,11 +6,18 @@
 
 Below this text will be some feachs which must be realizing in app "ANIME-APP".
 
-## Feachs
+## Features
 
-- [ ] Add some anime;
-- [ ] Add description to every anime;
-- [ ] Searching on site;
-- [ ] Sort by category;
-- [ ] Sort by realise date;
-- [ ] Sort by producer;
+### Main features:
+
+- [x] Add some anime;
+- [x] Add description to every anime;
+- [x] Rating of anime
+- [x] Searching on site;
+
+### Other features:
+
+- [ ] Add anime from different categories;
+- [ ] Sort by category, realise date, producer;
+- [ ] Every separate anime should have own page with detail information;
+- [ ] Every separate anime should have a trailer for itself;
