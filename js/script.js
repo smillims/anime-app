@@ -28,7 +28,9 @@ function Header() {
 }
 function SortForm() {
   return ` <div class="${styles.sectionForm}">
-              <form class="${styles.sortForm}" id="sortForm" name="sortForm" onsubmit="return false">
+              <form class="${
+                styles.sortForm
+              }" id="sortForm" name="sortForm" onsubmit="window.filterSearch(); window.renderApp()">
                 <div class="${styles.blockSearch}">
                   ${SearchInputSortForm()}
                   ${ApplyButtonSortForm()}
@@ -44,6 +46,7 @@ function SearchInputSortForm() {
                 name="search"
                 value="${window.dataStore.currentTitle}"
                 onchange="window.dataStore.currentTitle = this.value;"
+                autofocus
           />`;
 }
 function ApplyButtonSortForm() {
@@ -57,7 +60,13 @@ function ApplyButtonSortForm() {
 function CardsList() {
   return `<main class="${styles.main}">
             <div class="${styles.cardsItems}" id="cardsItems">
-              ${cardsToShow.map(card => Card(card))}
+              ${cardsToShow
+                .filter(anime => {
+                  if (anime.rated === 'Rx') return false;
+                  return true;
+                })
+                .map(card => Card(card))
+                .join('')}
             </div>
           </main>`;
 }
@@ -65,16 +74,10 @@ function CardsList() {
 function filterSearch() {
   const form = document.forms.sortForm;
   const search = form.search.value;
-  if (search === "") {
-    window.cardsToShow = results;
-    return;
-  }
+  if (!search) return (window.cardsToShow = results);
   window.cardsToShow = results.filter(animeItem => {
-    if (!(`${animeItem.title}`.toLowerCase().includes(search.toLowerCase()) && search)) {
-      return false;
-    } else {
-      return true;
-    }
+    if (!(`${animeItem.title}`.toLowerCase().includes(search.toLowerCase()) && search)) return false;
+    return true;
   });
 }
 
