@@ -1,44 +1,84 @@
 import { results } from './api-json';
 import styles from '../css/style.css';
 
-const header = document.querySelector('.header');
-const headerH1 = document.querySelector('.headerH1');
+window.results = results;
+window.renderApp = renderApp;
+window.filterSearch = filterSearch;
+window.renderCards = renderCards;
 
-const sectionForm = document.querySelector('#sectionForm');
-const sortForm = document.querySelector('.sortForm');
-const blockSearch = document.querySelector('.blockSearch');
-const search = document.querySelector('.search');
-const formButton = document.querySelector('.formButton');
+window.dataStore = {
+  currentTitle: '',
+};
 
-const main = document.querySelector('.main');
-const cardsItems = document.createElement('div');
-
-main.appendChild(cardsItems);
-
-function addStyles(styles) {
-  sectionForm.classList.add(styles.sectionForm);
-  sortForm.classList.add(styles.sortForm);
-  blockSearch.classList.add(styles.blockSearch);
-  search.classList.add(styles.search);
-  formButton.classList.add(styles.formButton);
-  header.classList.add(styles.header);
-  headerH1.classList.add(styles.headerH1);
-  main.classList.add(styles.main);
-  cardsItems.classList.add(styles.cardsItems);
+function renderApp() {
+  document.querySelector('#app').innerHTML = App();
 }
 
-addStyles(styles);
+renderApp();
 
-formButton.addEventListener('click', () => {
-  render(filterSearch(results));
-});
-
-function render(listOfAnime) {
-  cardsItems.innerHTML = makeCards(listOfAnime);
+function App() {
+  return `${Header()}
+          ${SortForm()}
+          ${CardsList()}`;
+}
+function Header() {
+  return `<header class="${styles.header}">
+            <h1 class="${styles.headerH1}" title="* read like Tsundoku">積ん読 *</h1>
+          </header>`;
+}
+function SortForm() {
+  return ` <div class="${styles.sectionForm}">
+              <form class="${styles.sortForm}" id="sortForm" name="sortForm" onsubmit="return false">
+                <div class="${styles.blockSearch}">
+                  ${SearchInputSortForm()}
+                  ${ApplyButtonSortForm()}
+                </div>
+              </form>
+            </div>`;
+}
+function SearchInputSortForm() {
+  return `<input 
+                class="${styles.search}"
+                id="search" 
+                type="text"
+                name="search"
+                value="${window.dataStore.currentTitle}"
+                onchange="window.dataStore.currentTitle = this.value;"
+          />`;
+}
+function ApplyButtonSortForm() {
+  return `<button class="${styles.formButton}" 
+                  id="formButton" 
+                  type="button" 
+                  onclick="window.renderCards(window.filterSearch(window.results)); window.renderApp()">
+                    Button
+            </button>`;
+}
+function CardsList() {
+  return `<main class="${styles.main}">
+            <div class="${styles.cardsItems}" id="cardsItems">
+              ${renderCards(results)}
+            </div>
+          </main>`;
 }
 
-function makeCards(listOfAnime) {
-  return listOfAnime.map(list => generateCard(list)).join('');
+function filterSearch(anime) {
+  const form = document.forms.sortForm;
+  const search = form.search.value;
+  console.log(search);
+  return anime.filter(animeItem => {
+    if (!(`${animeItem.title}`.toLowerCase().includes(search.toLowerCase()) && search)) {
+      console.log('no');
+      return false;
+    } else {
+      console.log('yes');
+      return true;
+    }
+  });
+}
+
+function renderCards(collectionAnime) {
+  return collectionAnime.map(animeList => generateCard(animeList)).join('');
 }
 
 function generateCard(list) {
@@ -50,15 +90,3 @@ function generateCard(list) {
             </div>
           </div>`;
 }
-
-function filterSearch(anime) {
-  const form = document.forms.sortForm;
-  const search = form.search.value;
-  return anime.filter(animeItem => {
-    // eslint-disable-next-line prettier/prettier
-    if (!`${animeItem.title}`.toLowerCase().includes(search.toLowerCase()) && search) return false;
-    return true;
-  });
-}
-
-render(results);

@@ -108,8 +108,8 @@ h6 {
 .sectionForm {
   display: flex;
 
-  margin-top: -10px;
-  padding: 45px 0;
+  /*margin-top: -10px;*/
+  padding: 40px 0;
 }
 .sortForm {
   width: 100%;

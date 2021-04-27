@@ -2,8 +2,7 @@ export const results = [
   {
     mal_id: 21,
     url: 'https://myanimelist.net/anime/21/One_Piece',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/6/73245.jpg?s=f792b8c9e28534ae455d06b15e686a14',
+    image_url: 'https://cdn.myanimelist.net/images/anime/6/73245.jpg?s=f792b8c9e28534ae455d06b15e686a14',
     title: 'One Piece',
     airing: true,
     synopsis:
@@ -19,8 +18,7 @@ export const results = [
   {
     mal_id: 459,
     url: 'https://myanimelist.net/anime/459/One_Piece_Movie_1',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/5/20925.jpg?s=7b95eafcc48c8f8dbf6fcd99e1118590',
+    image_url: 'https://cdn.myanimelist.net/images/anime/5/20925.jpg?s=7b95eafcc48c8f8dbf6fcd99e1118590',
     title: 'One Piece Movie 1',
     airing: false,
     synopsis:
@@ -36,8 +34,7 @@ export const results = [
   {
     mal_id: 31490,
     url: 'https://myanimelist.net/anime/31490/One_Piece_Film__Gold',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/12/81081.jpg?s=4372756d851a7e1807a572817ac16574',
+    image_url: 'https://cdn.myanimelist.net/images/anime/12/81081.jpg?s=4372756d851a7e1807a572817ac16574',
     title: 'One Piece Film: Gold',
     airing: false,
     synopsis:
@@ -53,8 +50,7 @@ export const results = [
   {
     mal_id: 12859,
     url: 'https://myanimelist.net/anime/12859/One_Piece_Film__Z',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/6/44297.jpg?s=ab00c4fc2882d3bb72c1985ada0af886',
+    image_url: 'https://cdn.myanimelist.net/images/anime/6/44297.jpg?s=ab00c4fc2882d3bb72c1985ada0af886',
     title: 'One Piece Film: Z',
     airing: false,
     synopsis:
@@ -70,8 +66,7 @@ export const results = [
   {
     mal_id: 9999,
     url: 'https://myanimelist.net/anime/9999/One_Piece_3D__Mugiwara_Chase',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/4/32455.jpg?s=991795b9931d468dd5e49ab8249ba9a8',
+    image_url: 'https://cdn.myanimelist.net/images/anime/4/32455.jpg?s=991795b9931d468dd5e49ab8249ba9a8',
     title: 'One Piece 3D: Mugiwara Chase',
     airing: false,
     synopsis:
@@ -87,8 +82,7 @@ export const results = [
   {
     mal_id: 37902,
     url: 'https://myanimelist.net/anime/37902/One_Piece__Episode_of_Sorajima',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/1533/92968.jpg?s=e37b55ae93cd0c8997364d1ae247ee4c',
+    image_url: 'https://cdn.myanimelist.net/images/anime/1533/92968.jpg?s=e37b55ae93cd0c8997364d1ae247ee4c',
     title: 'One Piece: Episode of Sorajima',
     airing: false,
     synopsis:
@@ -104,8 +98,7 @@ export const results = [
   {
     mal_id: 38234,
     url: 'https://myanimelist.net/anime/38234/One_Piece_Movie_14__Stampede',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/1221/100550.jpg?s=0a8df0aea5d9091e628bab80b0dfae26',
+    image_url: 'https://cdn.myanimelist.net/images/anime/1221/100550.jpg?s=0a8df0aea5d9091e628bab80b0dfae26',
     title: 'One Piece Movie 14: Stampede',
     airing: false,
     synopsis:
@@ -121,8 +114,7 @@ export const results = [
   {
     mal_id: 41340,
     url: 'https://myanimelist.net/anime/41340/Uchida_Shungicu_no_Noroi_no_One-Piece',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/1524/107399.jpg?s=0122798761f6f9cc15cb8bc2f1f63509',
+    image_url: 'https://cdn.myanimelist.net/images/anime/1524/107399.jpg?s=0122798761f6f9cc15cb8bc2f1f63509',
     title: 'Uchida Shungicu no Noroi no One-Piece',
     airing: false,
     synopsis:
@@ -138,8 +130,7 @@ export const results = [
   {
     mal_id: 462,
     url: 'https://myanimelist.net/anime/462/One_Piece_Movie_4__Dead_End_no_Bouken',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/10/20924.jpg?s=dfd9f4c3fd22878c47434135739292c4',
+    image_url: 'https://cdn.myanimelist.net/images/anime/10/20924.jpg?s=dfd9f4c3fd22878c47434135739292c4',
     title: 'One Piece Movie 4: Dead End no Bouken',
     airing: false,
     synopsis:
@@ -155,8 +146,7 @@ export const results = [
   {
     mal_id: 12001,
     url: 'https://myanimelist.net/anime/12001/One_Piece_3D__Gekisou_Trap_Coaster',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/4/33839.jpg?s=cecfcb0a77c71c6f5f3a2b5eb9a76f6f',
+    image_url: 'https://cdn.myanimelist.net/images/anime/4/33839.jpg?s=cecfcb0a77c71c6f5f3a2b5eb9a76f6f',
     title: 'One Piece 3D: Gekisou! Trap Coaster',
     airing: false,
     synopsis:
@@ -172,8 +162,7 @@ export const results = [
   {
     mal_id: 8171,
     url: 'https://myanimelist.net/anime/8171/One_Piece_Recap',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/9/20706.jpg?s=58543ca3d743e734dc2661ea3cf0f546',
+    image_url: 'https://cdn.myanimelist.net/images/anime/9/20706.jpg?s=58543ca3d743e734dc2661ea3cf0f546',
     title: 'One Piece Recap',
     airing: false,
     synopsis: 'A recap OVA summarizing the ten-year TV series up to the Impel Down arc.',
@@ -188,8 +177,7 @@ export const results = [
   {
     mal_id: 33338,
     url: 'https://myanimelist.net/anime/33338/One_Piece__Heart_of_Gold',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/6/80109.jpg?s=0ac2adc9343fcd00fc34fa0a29a0d4e8',
+    image_url: 'https://cdn.myanimelist.net/images/anime/6/80109.jpg?s=0ac2adc9343fcd00fc34fa0a29a0d4e8',
     title: 'One Piece: Heart of Gold',
     airing: false,
     synopsis:
@@ -205,8 +193,7 @@ export const results = [
   {
     mal_id: 4155,
     url: 'https://myanimelist.net/anime/4155/One_Piece_Film__Strong_World',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/12/75894.jpg?s=796b366064c84a08af64ff7207fc832a',
+    image_url: 'https://cdn.myanimelist.net/images/anime/12/75894.jpg?s=796b366064c84a08af64ff7207fc832a',
     title: 'One Piece Film: Strong World',
     airing: false,
     synopsis:
@@ -222,8 +209,7 @@ export const results = [
   {
     mal_id: 36240,
     url: 'https://myanimelist.net/anime/36240/Scratch_x_One_Piece_Film__Gold',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/8/87541.jpg?s=3b304216c25d60a6aa28cb506631eacb',
+    image_url: 'https://cdn.myanimelist.net/images/anime/8/87541.jpg?s=3b304216c25d60a6aa28cb506631eacb',
     title: 'Scratch x One Piece Film: Gold',
     airing: false,
     synopsis:
@@ -239,8 +225,7 @@ export const results = [
   {
     mal_id: 33606,
     url: 'https://myanimelist.net/anime/33606/One_Piece_Film__Gold_Episode_0_-_711_ver',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/4/83792.jpg?s=200bdfd3014669d46e690d61373219d7',
+    image_url: 'https://cdn.myanimelist.net/images/anime/4/83792.jpg?s=200bdfd3014669d46e690d61373219d7',
     title: 'One Piece Film: Gold Episode 0 - 711 ver.',
     airing: false,
     synopsis:
@@ -256,8 +241,7 @@ export const results = [
   {
     mal_id: 34177,
     url: 'https://myanimelist.net/anime/34177/Tenshi_no_3P',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/8/86831.jpg?s=da479c25a032ebe77877e04226e60bfb',
+    image_url: 'https://cdn.myanimelist.net/images/anime/8/86831.jpg?s=da479c25a032ebe77877e04226e60bfb',
     title: 'Tenshi no 3P!',
     airing: false,
     synopsis:
@@ -273,8 +257,7 @@ export const results = [
   {
     mal_id: 5252,
     url: 'https://myanimelist.net/anime/5252/One_Piece__Romance_Dawn_Story',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/6/11300.jpg?s=7fb6c83782739817748618f86ac943f8',
+    image_url: 'https://cdn.myanimelist.net/images/anime/6/11300.jpg?s=7fb6c83782739817748618f86ac943f8',
     title: 'One Piece: Romance Dawn Story',
     airing: false,
     synopsis:
@@ -290,8 +273,7 @@ export const results = [
   {
     mal_id: 2386,
     url: 'https://myanimelist.net/anime/2386/One_Piece__Yume_no_Soccer_Ou',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/4/70587.jpg?s=8f80817b92820fab57b7e87ab4272829',
+    image_url: 'https://cdn.myanimelist.net/images/anime/4/70587.jpg?s=8f80817b92820fab57b7e87ab4272829',
     title: 'One Piece: Yume no Soccer Ou!',
     airing: false,
     synopsis:
@@ -307,8 +289,7 @@ export const results = [
   {
     mal_id: 8740,
     url: 'https://myanimelist.net/anime/8740/One_Piece_Film__Strong_World_Episode_0',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/1172/109469.jpg?s=5a1bbf0646b2bbb6f33c379609d2d632',
+    image_url: 'https://cdn.myanimelist.net/images/anime/1172/109469.jpg?s=5a1bbf0646b2bbb6f33c379609d2d632',
     title: 'One Piece Film: Strong World Episode 0',
     airing: false,
     synopsis:
@@ -323,10 +304,8 @@ export const results = [
   },
   {
     mal_id: 36242,
-    url:
-      'https://myanimelist.net/anime/36242/TOHO_Cinemas_x_One_Piece_Film__Gold_-_Tokubetsu_Eizou',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/3/87543.jpg?s=a6acac563242830720a6cf92891af0bc',
+    url: 'https://myanimelist.net/anime/36242/TOHO_Cinemas_x_One_Piece_Film__Gold_-_Tokubetsu_Eizou',
+    image_url: 'https://cdn.myanimelist.net/images/anime/3/87543.jpg?s=a6acac563242830720a6cf92891af0bc',
     title: 'TOHO Cinemas x One Piece Film: Gold - Tokubetsu Eizou',
     airing: false,
     synopsis:
@@ -342,8 +321,7 @@ export const results = [
   {
     mal_id: 39392,
     url: 'https://myanimelist.net/anime/39392/Master_Piece_The_Animation',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/1195/101107.jpg?s=696df51d61f3535b5ea7262456b4b18f',
+    image_url: 'https://cdn.myanimelist.net/images/anime/1195/101107.jpg?s=696df51d61f3535b5ea7262456b4b18f',
     title: 'Master Piece The Animation',
     airing: false,
     synopsis:
@@ -359,8 +337,7 @@ export const results = [
   {
     mal_id: 22661,
     url: 'https://myanimelist.net/anime/22661/One_Piece__Cry_Heart',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/13/60173.jpg?s=407a7d154a8eb5c678ef0e5f9d88baa2',
+    image_url: 'https://cdn.myanimelist.net/images/anime/13/60173.jpg?s=407a7d154a8eb5c678ef0e5f9d88baa2',
     title: 'One Piece: Cry Heart',
     airing: false,
     synopsis:
@@ -376,8 +353,7 @@ export const results = [
   {
     mal_id: 8312,
     url: 'https://myanimelist.net/anime/8312/Piece',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/8/81241.jpg?s=6ed89a7e4e5aeea8b4b815961a107eca',
+    image_url: 'https://cdn.myanimelist.net/images/anime/8/81241.jpg?s=6ed89a7e4e5aeea8b4b815961a107eca',
     title: 'Piece',
     airing: false,
     synopsis: 'A music video to the song Piece by singer Aragaki Yui.',
@@ -392,8 +368,7 @@ export const results = [
   {
     mal_id: 36241,
     url: 'https://myanimelist.net/anime/36241/One_Piece_Film__Gold_-_Cine_Mike_Popcorn_Kokuchi',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/2/87542.jpg?s=e165ed6312ea36a729bc3fffebf67890',
+    image_url: 'https://cdn.myanimelist.net/images/anime/2/87542.jpg?s=e165ed6312ea36a729bc3fffebf67890',
     title: 'One Piece Film: Gold - Cine Mike Popcorn Kokuchi',
     airing: false,
     synopsis:
@@ -409,8 +384,7 @@ export const results = [
   {
     mal_id: 466,
     url: 'https://myanimelist.net/anime/466/One_Piece__Taose_Kaizoku_Ganzack',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/1848/96972.jpg?s=3a92d0e99e29162b2e11fd07c90a3b86',
+    image_url: 'https://cdn.myanimelist.net/images/anime/1848/96972.jpg?s=3a92d0e99e29162b2e11fd07c90a3b86',
     title: 'One Piece: Taose! Kaizoku Ganzack',
     airing: false,
     synopsis:
@@ -425,10 +399,8 @@ export const results = [
   },
   {
     mal_id: 16143,
-    url:
-      'https://myanimelist.net/anime/16143/One_Piece__Kinkyuu_Kikaku_One_Piece_Kanzen_Kouryakuhou',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/6/44259.jpg?s=b0f297d6fd1bb2d170b16a8463121e48',
+    url: 'https://myanimelist.net/anime/16143/One_Piece__Kinkyuu_Kikaku_One_Piece_Kanzen_Kouryakuhou',
+    image_url: 'https://cdn.myanimelist.net/images/anime/6/44259.jpg?s=b0f297d6fd1bb2d170b16a8463121e48',
     title: 'One Piece: Kinkyuu Kikaku One Piece Kanzen Kouryakuhou',
     airing: false,
     synopsis:
@@ -444,8 +416,7 @@ export const results = [
   {
     mal_id: 463,
     url: 'https://myanimelist.net/anime/463/One_Piece_Movie_5__Norowareta_Seiken',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/2/25413.jpg?s=e2521d3592a4adceb8ee3bcb1093fc20',
+    image_url: 'https://cdn.myanimelist.net/images/anime/2/25413.jpg?s=e2521d3592a4adceb8ee3bcb1093fc20',
     title: 'One Piece Movie 5: Norowareta Seiken',
     airing: false,
     synopsis:
@@ -461,8 +432,7 @@ export const results = [
   {
     mal_id: 32437,
     url: 'https://myanimelist.net/anime/32437/One_Piece__Long_Ring_Long_Land-hen',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/12/83503.jpg?s=a508c5189d2a45b7a49428431eb31c70',
+    image_url: 'https://cdn.myanimelist.net/images/anime/12/83503.jpg?s=a508c5189d2a45b7a49428431eb31c70',
     title: 'One Piece: Long Ring Long Land-hen',
     airing: false,
     synopsis: 'A 75-minute recap of episodes 207-219, the Long Ring Long Land Arc.',
@@ -476,10 +446,8 @@ export const results = [
   },
   {
     mal_id: 464,
-    url:
-      'https://myanimelist.net/anime/464/One_Piece_Movie_6__Omatsuri_Danshaku_to_Himitsu_no_Shima',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/11/25415.jpg?s=07c1c955b6ffdfa1f55ce24b78d66423',
+    url: 'https://myanimelist.net/anime/464/One_Piece_Movie_6__Omatsuri_Danshaku_to_Himitsu_no_Shima',
+    image_url: 'https://cdn.myanimelist.net/images/anime/11/25415.jpg?s=07c1c955b6ffdfa1f55ce24b78d66423',
     title: 'One Piece Movie 6: Omatsuri Danshaku to Himitsu no Shima',
     airing: false,
     synopsis:
@@ -495,8 +463,7 @@ export const results = [
   {
     mal_id: 2680,
     url: 'https://myanimelist.net/anime/2680/One_Piece__Straw_Hat_Theater',
-    image_url:
-      'https://cdn.myanimelist.net/images/anime/8/70745.jpg?s=546a2f78f23cd02b67643a9a7bcbd961',
+    image_url: 'https://cdn.myanimelist.net/images/anime/8/70745.jpg?s=546a2f78f23cd02b67643a9a7bcbd961',
     title: 'One Piece: Straw Hat Theater',
     airing: false,
     synopsis:
