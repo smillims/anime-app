@@ -4,7 +4,7 @@ import styles from '../css/style.css';
 window.results = results;
 window.renderApp = renderApp;
 window.filterSearch = filterSearch;
-window.renderCards = renderCards;
+window.cardsToShow = results;
 
 window.dataStore = {
   currentTitle: '',
@@ -50,43 +50,40 @@ function ApplyButtonSortForm() {
   return `<button class="${styles.formButton}" 
                   id="formButton" 
                   type="button" 
-                  onclick="window.renderCards(window.filterSearch(window.results)); window.renderApp()">
+                  onclick="window.filterSearch(); window.renderApp()">
                     Button
             </button>`;
 }
 function CardsList() {
   return `<main class="${styles.main}">
             <div class="${styles.cardsItems}" id="cardsItems">
-              ${renderCards(results)}
+              ${cardsToShow.map(card => Card(card))}
             </div>
           </main>`;
 }
 
-function filterSearch(anime) {
+function filterSearch() {
   const form = document.forms.sortForm;
   const search = form.search.value;
-  console.log(search);
-  return anime.filter(animeItem => {
+  if (search === "") {
+    window.cardsToShow = results;
+    return;
+  }
+  window.cardsToShow = results.filter(animeItem => {
     if (!(`${animeItem.title}`.toLowerCase().includes(search.toLowerCase()) && search)) {
-      console.log('no');
       return false;
     } else {
-      console.log('yes');
       return true;
     }
   });
 }
 
-function renderCards(collectionAnime) {
-  return collectionAnime.map(animeList => generateCard(animeList)).join('');
-}
-
-function generateCard(list) {
-  return `<div class="${styles.card}" id="${list.mal_id}">
-            <img src="${list.image_url}" alt="${list.title} poster">
+function Card(card) {
+  return `<div class="${styles.card}" id="${card.mal_id}">
+            <img src="${card.image_url}" alt="${card.title} poster">
             <div class="${styles.cardItemContainer}">
-              <h3 class="${styles.cardItemH3}">${list.title} <span class="${styles.cardItemRating}">[${list.rated}]</span></h3>
-              <p class="${styles.cardItemText}">${list.synopsis}</p>
+              <h3 class="${styles.cardItemH3}">${card.title} <span class="${styles.cardItemRating}">[${card.rated}]</span></h3>
+              <p class="${styles.cardItemText}">${card.synopsis}</p>
             </div>
           </div>`;
 }
