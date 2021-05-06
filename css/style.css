@@ -136,7 +136,7 @@ h6 {
   font-size: 18px;
 
   margin-left: -1px;
-  padding: 10px 30px;
+  padding: 10px 10px;
 
   border: 1px solid black;
 }
@@ -197,4 +197,10 @@ h6 {
   font-size: 13px;
 
   padding: 1px;
+}
+
+.paragraphOfState {
+  font-size: 20px;
+
+  text-align: center;
 }
