@@ -133,7 +133,7 @@ function ApplyButtonSortForm() {
                   id="formButton" 
                   type="button" 
                   name="searchButton">
-                    Button
+                    Click me!
             </button>`;
 }
 function CardsList(animeSearch) {
