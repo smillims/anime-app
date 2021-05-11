@@ -30,7 +30,7 @@ function validateAndLoadData() {
   const { currentTitle } = window.dataStore;
 
   if (!allowedTitles.includes(currentTitle)) {
-    const error = `Enter one of the anime titles: ${allowedTitles.join(', ')}.`;
+    const error = `Please, enter one of the anime titles: ${allowedTitles.join(', ')}.`;
     return Promise.resolve({ error });
   }
 
@@ -43,9 +43,8 @@ function validateAndLoadData() {
           const error = `No results were found for "${currentTitle}". 
           Make sure the request was submitted without errors.`;
           return Promise.resolve({ error });
-        } else {
-          return { data };
         }
+        return { data };
       });
   }
 
@@ -60,7 +59,6 @@ function performSearch(animeTitle) {
   window
     .validateAndLoadData()
     .then(({ error, data }) => {
-      console.log({ error, data });
       window.dataStore.isDataLoading = false;
       if (error) {
         window.dataStore.error = error;
@@ -85,9 +83,11 @@ function renderApp() {
 function AnimeCardsResults() {
   const { currentTitle, isDataLoading, error } = window.dataStore;
 
-  let content = '';
+  let content = ``;
   if (currentTitle === '') {
-    content = 'Search anime whatever you like';
+    content = `<p class="${styles.paragraphOfState}">Good day (or evening)!
+    <br></br>
+    At the moment you could search just some of titles: ${allowedTitles.join(', ')}.</p>`;
   } else {
     if (isDataLoading) {
       content = 'Loading...';
@@ -152,22 +152,15 @@ function CardsList(animeSearch) {
               ${animeSearch
                 .filter(anime => {
                   if (anime.rated === 'Rx') return false;
-                  else if (!anime.title.toLowerCase().includes(search.toLowerCase())) {
-                    return false;
-                  } else {
-                    return true;
-                  }
+                  else if (!anime.title.toLowerCase().includes(search.toLowerCase())) return false;
+                  return true;
                 })
-                .map(card => {
-                  return Card(card);
-                })
+                .map(card => Card(card))
                 .join('')}
             </div>
           </main>
           ${Footer()}`;
-  //${Footer()}
 }
-//anime.title.replace(/\s+/g, '').toLowerCase().includes(search.toLowerCase())
 
 function Card(card) {
   return `<div class="${styles.card}" id="${card.mal_id}">
