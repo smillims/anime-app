@@ -1,3 +1,4 @@
+import { check } from 'prettier';
 import styles from '../css/style.css';
 
 window.renderApp = renderApp;
@@ -11,7 +12,7 @@ window.dataStore = {
   cashOfAnimeSearch: {},
 };
 
-const animeTitles = ['One Piece', 'Tokyo Ghoul'];
+const animeTitles = ['One Piece', 'Tokyo Ghoul', 'Naruto'];
 const allowedTitles = Object.values(animeTitles);
 
 function getAnimeSearchUrl(search) {
@@ -38,7 +39,13 @@ function validateAndLoadData() {
     return fetch(url)
       .then(response => response.json())
       .then(data => {
-        return { data };
+        if (data.results.length === 0) {
+          const error = `No results were found for "${currentTitle}". 
+          Make sure the request was submitted without errors.`;
+          return Promise.resolve({ error });
+        } else {
+          return { data };
+        }
       });
   }
 
@@ -53,6 +60,7 @@ function performSearch(animeTitle) {
   window
     .validateAndLoadData()
     .then(({ error, data }) => {
+      console.log({ error, data });
       window.dataStore.isDataLoading = false;
       if (error) {
         window.dataStore.error = error;
@@ -109,7 +117,7 @@ function Header() {
 }
 function SortForm() {
   return ` <div class="${styles.sectionForm}">
-              <form class="${styles.sortForm}" id="sortForm" name="sortForm">
+              <form class="${styles.sortForm}" id="sortForm" name="sortForm" onsubmit="return false;">
                 <div class="${styles.blockSearch}">
                   ${SearchInputSortForm()}
                   ${ApplyButtonSortForm()}
@@ -144,21 +152,40 @@ function CardsList(animeSearch) {
               ${animeSearch
                 .filter(anime => {
                   if (anime.rated === 'Rx') return false;
-                  else if (!anime.title.includes(search)) return false;
-                  return true;
+                  else if (!anime.title.toLowerCase().includes(search.toLowerCase())) {
+                    return false;
+                  } else {
+                    return true;
+                  }
                 })
-                .map(card => Card(card))
+                .map(card => {
+                  return Card(card);
+                })
                 .join('')}
             </div>
-          </main>`;
+          </main>
+          ${Footer()}`;
+  //${Footer()}
 }
+//anime.title.replace(/\s+/g, '').toLowerCase().includes(search.toLowerCase())
 
 function Card(card) {
   return `<div class="${styles.card}" id="${card.mal_id}">
-            <img src="${card.image_url}" alt="${card.title} poster">
+            <div class="${styles.cardImgContainer}">
+              <img class="${styles.cardImg}" src="${card.image_url}" alt="${card.title} poster" />
+            </div>
             <div class="${styles.cardItemContainer}">
-              <h3 class="${styles.cardItemH3}">${card.title} <span class="${styles.cardItemRating}">[${card.rated}]</span></h3>
+              <h3 class="${styles.cardItemH3}">${card.title}</h3>
+              <span class="${styles.cardItemRating}">[${card.rated}]</span>
               <p class="${styles.cardItemText}">${card.synopsis}</p>
+              <button class="${styles.cardButton}">More</button>
             </div>
           </div>`;
+}
+
+function Footer() {
+  return `<footer class="${styles.footer}">
+            <p class="${styles.githubProfile}"><a class="${styles.githubProfileLink}" href="https://github.com/smillims">GitHub Profile Author's</a></p>
+            <p class="${styles.email}">If you have any recommendations: danil.liashchenko.uk@gmail.com</p>
+          </footer>`;
 }
