@@ -16,7 +16,7 @@ const animeTitles = ['One Piece', 'Tokyo Ghoul', 'Naruto'];
 const allowedTitles = Object.values(animeTitles);
 
 function getAnimeSearchUrl(search) {
-  const checkTitle = allowedTitles.filter(animeTitle => animeTitle === search);
+  const checkTitle = allowedTitles.filter(animeTitle => animeTitle.toLowerCase() === search.toLowerCase());
   const stringToUrl = checkTitle.join().replace(/\s+/g, '');
   return `https://api.jikan.moe/v3/search/anime?q=${stringToUrl}&page=1`;
 }
@@ -29,7 +29,7 @@ function isCurrentTitleDataLoaded() {
 function validateAndLoadData() {
   const { currentTitle } = window.dataStore;
 
-  if (!allowedTitles.includes(currentTitle)) {
+  if (!allowedTitles.map(anime => anime.toLowerCase()).includes(currentTitle.toLowerCase())) {
     const error = `Please, enter one of the anime titles: ${allowedTitles.join(', ')}.`;
     return Promise.resolve({ error });
   }
@@ -44,6 +44,7 @@ function validateAndLoadData() {
           Make sure the request was submitted without errors.`;
           return Promise.resolve({ error });
         }
+        console.log(data.results);
         return { data };
       });
   }
@@ -169,7 +170,7 @@ function Card(card) {
             </div>
             <div class="${styles.cardItemContainer}">
               <h3 class="${styles.cardItemH3}">${card.title}</h3>
-              <span class="${styles.cardItemRating}">[${card.rated}]</span>
+              <span class="${styles.cardItemRating}">${card.score} / 10</span>
               <p class="${styles.cardItemText}">${card.synopsis}</p>
               <button class="${styles.cardButton}">More</button>
             </div>
