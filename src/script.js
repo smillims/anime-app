@@ -9,4 +9,4 @@ window.renderApp = renderApp;
 window.performSearch = performSearch;
 window.validateAndLoadData = validateAndLoadData;
 
-renderApp(App, '#app');
+renderApp(App, document.getElementById('app'));

@@ -154,6 +154,9 @@ body {
 
 /* MAIN */
 
+.main {
+}
+
 .cardsItems {
   display: grid;
   grid-template-columns: repeat(6, 220px);
@@ -293,6 +296,10 @@ body {
   font-size: 20px;
 
   text-align: center;
+}
+
+.paragraphOfState p {
+  margin-bottom: 10px;
 }
 
 .footer {

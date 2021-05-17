@@ -1,3 +1,6 @@
+/** @jsx createElement */
+/** @jsxFrag createFragment */
+import { createElement, createFragment } from '../framework/element';
 import styles from '../css/style.css';
 import { allowedTitles } from '../data/animeSearchAPI';
 import { isCurrentTitleDataLoaded } from '../data/animeData';
@@ -8,9 +11,12 @@ export default function AnimeCardsResults() {
 
   let content = ``;
   if (currentTitle === '') {
-    content = `<p class="${styles.paragraphOfState}">Good day (or evening)!
-    <br></br>
-    At the moment you could search just some of titles: ${allowedTitles.join(', ')}.</p>`;
+    content = (
+      <>
+        <p>Good day (or evening)!</p>
+        <p>At the moment you could search just some of titles: {allowedTitles.join(', ')}.</p>
+      </>
+    );
   } else {
     if (isDataLoading) {
       content = 'Loading...';
@@ -21,9 +27,9 @@ export default function AnimeCardsResults() {
     }
 
     if (isCurrentTitleDataLoaded()) {
-      content = `${CardsList(isCurrentTitleDataLoaded())}`;
+      content = CardsList(isCurrentTitleDataLoaded());
     }
   }
 
-  return `<p class='${styles.paragraphOfState}'>${content}</p>`;
+  return <p class={styles.paragraphOfState}>{content}</p>;
 }
