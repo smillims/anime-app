@@ -1,11 +1,12 @@
 import { allowedTitles, getAnimeSearchUrl } from './animeSearchAPI';
+import renderApp from '../framework/render';
 
 export function isCurrentTitleDataLoaded() {
   const { cashOfAnimeSearch, currentTitle } = window.dataStore;
   return cashOfAnimeSearch[currentTitle];
 }
 
-export function validateAndLoadData() {
+function validateAndLoadData() {
   const { currentTitle } = window.dataStore;
 
   if (!allowedTitles.map(anime => anime.toLowerCase()).includes(currentTitle.toLowerCase())) {
@@ -34,10 +35,9 @@ export function performSearch(animeTitle) {
   window.dataStore.currentTitle = animeTitle;
   window.dataStore.error = null;
   window.dataStore.isDataLoading = true;
-  window.renderApp();
+  renderApp();
 
-  window
-    .validateAndLoadData()
+  validateAndLoadData()
     .then(({ error, data }) => {
       window.dataStore.isDataLoading = false;
       if (error) {
@@ -50,6 +50,6 @@ export function performSearch(animeTitle) {
       window.dataStore.error = 'Happened some error.';
     })
     .finally(() => {
-      window.renderApp();
+      renderApp();
     });
 }

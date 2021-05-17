@@ -2,6 +2,7 @@
 /** @jsxFrag createFragment */
 import { createElement } from '../framework/element';
 import styles from '../css/style.css';
+import { performSearch } from '../data/animeData';
 
 export default function SortForm() {
   return (
@@ -24,7 +25,7 @@ function SearchInputSortForm() {
       type="text"
       name="search"
       value={window.dataStore.currentTitle}
-      onchange={e => window.performSearch(e.target.value)}
+      onchange={e => performSearch(e.target.value)}
       autofocus
     />
   );
