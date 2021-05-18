@@ -1,8 +1,8 @@
 /** @jsx createElement */
 /** @jsxFrag createFragment */
-import { createElement } from '../framework/element';
-import styles from '../css/style.css';
-import { performSearch } from '../data/animeData';
+import { createElement } from '../../framework/element';
+import styles from './css/style.css';
+import { performSearch } from '../../data/animeData';
 
 export default function SortForm() {
   return (

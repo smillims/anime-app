@@ -1,8 +1,8 @@
 /** @jsx createElement */
 /** @jsxFrag createFragment */
-import { createElement } from '../framework/element';
-import styles from '../css/style.css';
-import Card from './Card';
+import { createElement } from '../../framework/element';
+import styles from './css/style.css';
+import Card from '../Card';
 
 export default function CardsList(animeSearch) {
   return (

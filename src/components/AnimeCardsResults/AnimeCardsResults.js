@@ -1,9 +1,9 @@
 /** @jsx createElement */
 /** @jsxFrag createFragment */
-import { createElement } from '../framework/element';
-import styles from '../css/style.css';
-import { isCurrentTitleDataLoaded } from '../data/animeData';
-import CardsList from './CardsList';
+import { createElement } from '../../framework/element';
+import { paragraphOfState } from './css/style.css';
+import { isCurrentTitleDataLoaded } from '../../data/animeData';
+import CardsList from '../CardsList';
 
 export default function AnimeCardsResults() {
   const { currentTitle, isDataLoading, error } = window.dataStore;
@@ -30,5 +30,5 @@ export default function AnimeCardsResults() {
     }
   }
 
-  return <p class={styles.paragraphOfState}>{content}</p>;
+  return <p class={paragraphOfState}>{content}</p>;
 }

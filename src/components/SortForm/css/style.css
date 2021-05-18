@@ -1,0 +1,39 @@
+.sectionForm {
+  display: flex;
+
+  padding: 40px 0;
+}
+.sortForm {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.search {
+  width: 250px;
+
+  font-size: 18px;
+
+  padding: 5px 10px;
+}
+
+.formButton {
+  margin-left: -3px;
+  padding: 10px 10px;
+
+  color: white;
+  background-color: #b8390e;
+}
+
+.search,
+.formButton {
+  font-size: 20px;
+  border: 3px solid #000c20;
+}
+
+@media screen and (max-width: 380px) {
+  .search {
+    width: 200px;
+  }
+}

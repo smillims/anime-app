@@ -1,0 +1,9 @@
+.paragraphOfState {
+  font-size: 20px;
+
+  text-align: center;
+}
+
+.paragraphOfState p {
+  margin-bottom: 10px;
+}
