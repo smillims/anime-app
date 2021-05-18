@@ -2,7 +2,6 @@
 /** @jsxFrag createFragment */
 import { createElement } from '../framework/element';
 import styles from '../css/style.css';
-import { allowedTitles } from '../data/animeSearchAPI';
 import { isCurrentTitleDataLoaded } from '../data/animeData';
 import CardsList from './CardsList';
 
@@ -14,7 +13,7 @@ export default function AnimeCardsResults() {
     content = (
       <div>
         <p>Good day (or evening)!</p>
-        <p>At the moment you could search just some of titles: {allowedTitles.join(', ')}.</p>
+        <p>You could search anime whatever you like!</p>
       </div>
     );
   } else {
