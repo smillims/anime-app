@@ -1,6 +1,6 @@
 /** @jsx createElement */
 /** @jsxFrag createFragment */
-import { createElement, createFragment } from '../framework/element';
+import { createElement } from '../framework/element';
 import styles from '../css/style.css';
 
 export default function Card(card) {

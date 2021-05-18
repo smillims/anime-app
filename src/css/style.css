@@ -126,10 +126,6 @@ body {
   justify-content: center;
 }
 
-.blockSearch {
-  display: flex;
-}
-
 .search {
   width: 250px;
 

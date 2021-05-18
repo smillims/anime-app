@@ -1,4 +1,4 @@
-import { allowedTitles, getAnimeSearchUrl } from './animeSearchAPI';
+import { getAnimeSearchUrl } from './animeSearchAPI';
 import renderApp from '../framework/render';
 
 export function isCurrentTitleDataLoaded() {
@@ -9,21 +9,11 @@ export function isCurrentTitleDataLoaded() {
 function validateAndLoadData() {
   const { currentTitle } = window.dataStore;
 
-  if (!allowedTitles.map(anime => anime.toLowerCase()).includes(currentTitle.toLowerCase())) {
-    const error = `Please, enter one of the anime titles: ${allowedTitles.join(', ')}.`;
-    return Promise.resolve({ error });
-  }
-
   const url = getAnimeSearchUrl(currentTitle);
   if (!isCurrentTitleDataLoaded()) {
     return fetch(url)
       .then(response => response.json())
       .then(data => {
-        if (data.results.length === 0) {
-          const error = `No results were found for "${currentTitle}". 
-          Make sure the request was submitted without errors.`;
-          return Promise.resolve({ error });
-        }
         return { data };
       });
   }
@@ -40,10 +30,14 @@ export function performSearch(animeTitle) {
   validateAndLoadData()
     .then(({ error, data }) => {
       window.dataStore.isDataLoading = false;
+      const filterAnime = filterAnimeByTitle(data);
       if (error) {
         window.dataStore.error = error;
-      } else if (data) {
-        window.dataStore.cashOfAnimeSearch[animeTitle] = data.results;
+      } else if (!filterAnime.length) {
+        window.dataStore.error = `No results were found for "${window.dataStore.currentTitle}".
+        Make sure the request was submitted without errors. `;
+      } else {
+        window.dataStore.cashOfAnimeSearch[animeTitle] = filterAnime;
       }
     })
     .catch(() => {
@@ -52,4 +46,13 @@ export function performSearch(animeTitle) {
     .finally(() => {
       renderApp();
     });
+}
+
+function filterAnimeByTitle(data) {
+  return data.results.filter(anime => {
+    if (anime.rated === 'Rx') return false;
+    else if (!anime.title.toLowerCase().includes(window.dataStore.currentTitle.toLowerCase()))
+      return false;
+    return true;
+  });
 }

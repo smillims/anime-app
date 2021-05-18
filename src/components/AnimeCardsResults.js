@@ -1,6 +1,6 @@
 /** @jsx createElement */
 /** @jsxFrag createFragment */
-import { createElement, createFragment } from '../framework/element';
+import { createElement } from '../framework/element';
 import styles from '../css/style.css';
 import { allowedTitles } from '../data/animeSearchAPI';
 import { isCurrentTitleDataLoaded } from '../data/animeData';
@@ -12,10 +12,10 @@ export default function AnimeCardsResults() {
   let content = ``;
   if (currentTitle === '') {
     content = (
-      <>
+      <div>
         <p>Good day (or evening)!</p>
         <p>At the moment you could search just some of titles: {allowedTitles.join(', ')}.</p>
-      </>
+      </div>
     );
   } else {
     if (isDataLoading) {
