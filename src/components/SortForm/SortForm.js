@@ -11,7 +11,7 @@ export default function SortForm() {
         class={styles.sortForm}
         id="sortForm"
         name="sortForm"
-        onclick={e => e.explicitOriginalTarget.nextElementSibling}
+        onsumbit={e => e.explicitOriginalTarget.nextElementSibling}
       >
         {SearchInputSortForm()}
         {ApplyButtonSortForm()}
