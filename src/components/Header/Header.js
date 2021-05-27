@@ -1,7 +1,7 @@
 /** @jsx createElement */
 /** @jsxFrag createFragment */
-import { createElement } from '../../framework/element';
-import { header, headerH1 } from './css/style.css';
+import { createElement } from '../../framework';
+import { header, headerH1 } from './style.css';
 
 export default function Header() {
   return (

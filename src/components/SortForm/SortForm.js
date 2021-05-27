@@ -1,47 +1,36 @@
 /** @jsx createElement */
 /** @jsxFrag createFragment */
-import { createElement } from '../../framework/element';
-import styles from './css/style.css';
-import { performSearch } from '../../data/animeData';
+import { createElement } from '../../framework';
+import styles from './style.css';
 
-export default function SortForm() {
+export default function SortForm({ onSubmit, value }) {
   return (
     <div class={styles.sectionForm}>
       <form
         class={styles.sortForm}
         id="sortForm"
         name="sortForm"
-        onsumbit={e => e.explicitOriginalTarget.nextElementSibling}
+        onSubmit={event => {
+          event.preventDefault();
+          onSubmit(event.target.firstChild.value);
+        }}
       >
-        {SearchInputSortForm()}
+        {SearchInputSortForm(value)}
         {ApplyButtonSortForm()}
       </form>
     </div>
   );
 }
 
-function SearchInputSortForm() {
+function SearchInputSortForm(value) {
   return (
-    <input
-      class={styles.search}
-      id="search"
-      type="text"
-      name="search"
-      value={window.dataStore.currentTitle}
-      autofocus
-    />
+    <input class={styles.search} id="search" type="text" name="search" value={value} autofocus />
   );
 }
 
 function ApplyButtonSortForm() {
   return (
-    <button
-      class={styles.formButton}
-      id="formButton"
-      type="submit"
-      name="searchButton"
-      onclick={e => performSearch(e.target.form.firstChild.value)}
-    >
+    <button class={styles.formButton} id="formButton" type="submit" name="searchButton">
       Click me!
     </button>
   );

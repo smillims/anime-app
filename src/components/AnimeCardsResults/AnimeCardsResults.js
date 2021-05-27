@@ -1,34 +1,31 @@
 /** @jsx createElement */
 /** @jsxFrag createFragment */
-import { createElement } from '../../framework/element';
-import { paragraphOfState } from './css/style.css';
-import { isCurrentTitleDataLoaded } from '../../data/animeData';
+import { createElement } from '../../framework';
+import { paragraphOfState } from './style.css';
 import CardsList from '../CardsList';
 
-export default function AnimeCardsResults() {
-  const { currentTitle, isDataLoading, error } = window.dataStore;
-
-  let content = ``;
+export default function AnimeCardsResults({
+  currentTitle,
+  error,
+  isDataLoading,
+  cashOfAnimeSearch,
+}) {
   if (currentTitle === '') {
-    content = (
-      <div>
+    return (
+      <div class={paragraphOfState}>
         <p>Good day (or evening)!</p>
         <p>You could search anime whatever you like!</p>
       </div>
     );
-  } else {
-    if (isDataLoading) {
-      content = 'Loading...';
-    }
-
-    if (error !== null) {
-      content = error;
-    }
-
-    if (isCurrentTitleDataLoaded()) {
-      content = CardsList(isCurrentTitleDataLoaded());
-    }
   }
 
-  return <p class={paragraphOfState}>{content}</p>;
+  if (isDataLoading) {
+    return <div class={paragraphOfState}>Loading...</div>;
+  }
+
+  if (error) {
+    return <div class={paragraphOfState}>{error}</div>;
+  }
+
+  return <div class={paragraphOfState}>{CardsList(cashOfAnimeSearch)}</div>;
 }
