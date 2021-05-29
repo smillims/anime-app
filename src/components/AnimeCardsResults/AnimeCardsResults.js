@@ -4,12 +4,7 @@ import { createElement } from '../../framework';
 import { paragraphOfState } from './style.css';
 import CardsList from '../CardsList';
 
-export default function AnimeCardsResults({
-  currentTitle,
-  error,
-  isDataLoading,
-  cashOfAnimeSearch,
-}) {
+export default function AnimeCardsResults({ currentTitle, error, isDataLoading, animeSearch }) {
   if (currentTitle === '') {
     return (
       <div class={paragraphOfState}>
@@ -27,5 +22,5 @@ export default function AnimeCardsResults({
     return <div class={paragraphOfState}>{error}</div>;
   }
 
-  return <div class={paragraphOfState}>{CardsList(cashOfAnimeSearch)}</div>;
+  return <div class={paragraphOfState}>{CardsList(animeSearch)}</div>;
 }

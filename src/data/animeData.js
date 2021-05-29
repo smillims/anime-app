@@ -3,9 +3,17 @@ function getAnimeSearchUrl(search) {
   return `https://api.jikan.moe/v3/search/anime?q=${stringToUrl}&page=1`;
 }
 
+const dataStore = {};
+
 export function validateAndLoadData(currentTitle) {
+  const cashOfAnime = dataStore[currentTitle];
+
+  if (cashOfAnime) return cashOfAnime;
+
   const url = getAnimeSearchUrl(currentTitle);
   return fetch(url).then(response => {
-    return response.json();
+    const results = response.json();
+    dataStore[currentTitle] = results;
+    return results;
   });
 }
