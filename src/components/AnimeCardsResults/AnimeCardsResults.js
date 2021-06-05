@@ -1,13 +1,11 @@
-/** @jsx createElement */
-/** @jsxFrag createFragment */
-import { createElement } from '../../framework';
+import React from 'react';
 import { paragraphOfState } from './style.css';
 import CardsList from '../CardsList';
 
-export default function AnimeCardsResults({ currentTitle, error, isDataLoading, animeSearch }) {
+function AnimeCardsResults({ currentTitle, error, isDataLoading, animeSearch }) {
   if (currentTitle === '') {
     return (
-      <div class={paragraphOfState}>
+      <div className={paragraphOfState}>
         <p>Good day (or evening)!</p>
         <p>You could search anime whatever you like!</p>
       </div>
@@ -15,12 +13,16 @@ export default function AnimeCardsResults({ currentTitle, error, isDataLoading, 
   }
 
   if (isDataLoading) {
-    return <div class={paragraphOfState}>Loading...</div>;
+    return <div className={paragraphOfState}>Loading...</div>;
   }
 
   if (error) {
-    return <div class={paragraphOfState}>{error}</div>;
+    return (
+      <div className={paragraphOfState}>{typeof error === 'object' ? error.toString() : error}</div>
+    );
   }
 
-  return <div class={paragraphOfState}>{CardsList(animeSearch)}</div>;
+  return <div className={paragraphOfState}>{CardsList(animeSearch)}</div>;
 }
+
+export default AnimeCardsResults;

@@ -1,6 +1,4 @@
-/** @jsx createElement */
-/** @jsxFrag createFragment */
-import { createElement, createFragment } from '../../framework';
+import React from 'react';
 import { useWeather } from '../../customHooks';
 import Header from '../Header';
 import SortForm from '../SortForm';

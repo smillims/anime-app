@@ -1,13 +1,11 @@
-/** @jsx createElement */
-/** @jsxFrag createFragment */
-import { createElement } from '../../framework';
+import React from 'react';
 import styles from './style.css';
 
 export default function SortForm({ onSubmit, value }) {
   return (
-    <div class={styles.sectionForm}>
+    <div className={styles.sectionForm}>
       <form
-        class={styles.sortForm}
+        className={styles.sortForm}
         id="sortForm"
         name="sortForm"
         onSubmit={event => {
@@ -24,13 +22,20 @@ export default function SortForm({ onSubmit, value }) {
 
 function SearchInputSortForm(value) {
   return (
-    <input class={styles.search} id="search" type="text" name="search" value={value} autofocus />
+    <input
+      className={styles.search}
+      id="search"
+      type="text"
+      name="search"
+      defaultValue={value}
+      autoFocus
+    />
   );
 }
 
 function ApplyButtonSortForm() {
   return (
-    <button class={styles.formButton} id="formButton" type="submit" name="searchButton">
+    <button className={styles.formButton} id="formButton" type="submit" name="searchButton">
       Click me!
     </button>
   );
