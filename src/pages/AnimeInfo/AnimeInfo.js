@@ -1,9 +1,23 @@
-/** @jsx createElement */
-/** @jsxFrag createFragment */
-import { createElement } from '../../framework';
+import React, { useEffect, useState } from 'react';
 
-export default function AnimeInfo(id) {
-  window.qqq = id;
+function AnimeInfo(props) {
+  console.log(props);
+
+  //const [items, setItems] = useState([]);
+  //const stringToUrl = `${id}`.replace(/\s+/g, '');
+  //const url = `https://api.jikan.moe/v3/anime/${stringToUrl}`;
+  //console.log(url, stringToUrl, id);
+  //useEffect(() => {
+  //  if (id) {
+  //    fetch(url)
+  //      .then(response => response.json())
+  //      .then(data => {
+  //        console.log(data);
+  //        setItems(data);
+  //      });
+  //  }
+  //}, []);
+
   return (
     <div>
       <h1>Anime Title</h1>
@@ -11,3 +25,5 @@ export default function AnimeInfo(id) {
     </div>
   );
 }
+
+export default AnimeInfo;
