@@ -22,7 +22,7 @@ export default function App() {
   );
 }
 
-function MainPage({ setAnimeId, animeId }) {
+function MainPage({ setAnimeId }) {
   const { currentTitle, setCurrentTitle, error, isDataLoading, animeSearch } = useWeather();
   return (
     <>
@@ -33,7 +33,6 @@ function MainPage({ setAnimeId, animeId }) {
         isDataLoading={isDataLoading}
         animeSearch={animeSearch}
         setAnimeId={setAnimeId}
-        animeId={animeId}
       />
     </>
   );

@@ -2,14 +2,7 @@ import React from 'react';
 import { paragraphOfState } from './style.css';
 import CardsList from '../CardsList';
 
-function AnimeCardsResults({
-  currentTitle,
-  error,
-  isDataLoading,
-  animeSearch,
-  setAnimeId,
-  animeId,
-}) {
+function AnimeCardsResults({ currentTitle, error, isDataLoading, animeSearch, setAnimeId }) {
   if (currentTitle === '') {
     return (
       <div className={paragraphOfState}>
@@ -29,7 +22,7 @@ function AnimeCardsResults({
     );
   }
 
-  return <div className={paragraphOfState}>{CardsList(animeSearch, setAnimeId, animeId)}</div>;
+  return <div className={paragraphOfState}>{CardsList(animeSearch, setAnimeId)}</div>;
 }
 
 export default AnimeCardsResults;
