@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-function AnimeInfo(props) {
-  console.log(props);
+function AnimeInfo({ id }) {
+  console.log(id);
 
   //const [items, setItems] = useState([]);
   //const stringToUrl = `${id}`.replace(/\s+/g, '');
