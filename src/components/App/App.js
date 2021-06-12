@@ -8,7 +8,7 @@ export default function App() {
   const { currentTitle, setCurrentTitle, error, isDataLoading, animeSearch } = useAnime();
 
   return (
-    <div>
+    <>
       <Header />
       <SortForm onSubmit={setCurrentTitle} value={currentTitle} />
       <AnimeCardsResults
@@ -17,6 +17,6 @@ export default function App() {
         isDataLoading={isDataLoading}
         animeSearch={animeSearch}
       />
-    </div>
+    </>
   );
 }

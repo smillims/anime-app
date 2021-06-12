@@ -12,12 +12,15 @@ export const useAnime = () => {
     if (currentTitle) {
       validateAndLoadData(currentTitle)
         .then(data => {
+          const error = `No results were found for "${currentTitle}".
+          Make sure the request was submitted without errors.`;
+
+          const { message, code } = data;
+          if (code !== '200' && message) throw Error(error);
+
           const filterAnime = filterAnimeByTitle(data);
-          if (!filterAnime.length) {
-            const error = `No results were found for "${currentTitle}".
-            Make sure the request was submitted without errors.`;
-            throw Error(error);
-          }
+
+          if (!filterAnime.length) throw Error(error);
 
           setError(null);
           setAnimeSearch(filterAnime);
