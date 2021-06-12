@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { validateAndLoadData } from './data/animeData';
 
-export const useWeather = () => {
+export const useAnime = () => {
   const [currentTitle, setCurrentTitle] = useState('');
   const [error, setError] = useState(null);
   const [isDataLoading, setIsDataLoading] = useState(false);

@@ -1,14 +1,14 @@
 import React from 'react';
-import { useWeather } from '../../customHooks';
+import { useAnime } from '../../customHooks';
 import Header from '../Header';
 import SortForm from '../SortForm';
 import AnimeCardsResults from '../AnimeCardsResults';
 
 export default function App() {
-  const { currentTitle, setCurrentTitle, error, isDataLoading, animeSearch } = useWeather();
+  const { currentTitle, setCurrentTitle, error, isDataLoading, animeSearch } = useAnime();
 
   return (
-    <>
+    <div>
       <Header />
       <SortForm onSubmit={setCurrentTitle} value={currentTitle} />
       <AnimeCardsResults
@@ -17,6 +17,6 @@ export default function App() {
         isDataLoading={isDataLoading}
         animeSearch={animeSearch}
       />
-    </>
+    </div>
   );
 }

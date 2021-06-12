@@ -22,7 +22,11 @@ function AnimeCardsResults({ currentTitle, error, isDataLoading, animeSearch }) 
     );
   }
 
-  return <div className={paragraphOfState}>{CardsList(animeSearch)}</div>;
+  return (
+    <div className={paragraphOfState}>
+      <CardsList animeSearch={animeSearch} />
+    </div>
+  );
 }
 
 export default AnimeCardsResults;
