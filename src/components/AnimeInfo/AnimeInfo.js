@@ -27,7 +27,15 @@ function AnimeInfo() {
     }
   }, [animeID]);
 
-  return <AnimeDetailPage error={error} isDataLoading={isDataLoading} animeDetail={animeDetail} />;
+  if (isDataLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
+  return <AnimeDetailPage animeDetail={animeDetail} />;
 }
 
 export default AnimeInfo;

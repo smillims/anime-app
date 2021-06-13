@@ -1,15 +1,7 @@
 import React from 'react';
 import styles from './style.css';
 
-function AnimeDetailPage({ error, isDataLoading, animeDetail }) {
-  if (isDataLoading) {
-    return <p>Loading...</p>;
-  }
-
-  if (error) {
-    <p>{error}</p>;
-  }
-
+function AnimeDetailPage({ animeDetail }) {
   function checkOnNull(item) {
     if (item === null || item === undefined) {
       return <b>No info</b>;

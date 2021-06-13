@@ -23,7 +23,6 @@ function Main() {
 
   return (
     <>
-      {/*<Header />*/}
       <SortForm onSubmit={setCurrentTitle} value={currentTitle} />
       <AnimeCardsResults
         currentTitle={currentTitle}
