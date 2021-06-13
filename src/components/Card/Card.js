@@ -1,9 +1,10 @@
 import React from 'react';
 import styles from './style.css';
+import { Link } from 'react-router-dom';
 
 export default function Card({ card }) {
   return (
-    <a>
+    <Link to={`/anime-info/${card.mal_id}`}>
       <div className={styles.card} id={card.mal_id}>
         <div className={styles.cardImgContainer}>
           <img src={card.image_url} alt={card.title} />
@@ -14,6 +15,6 @@ export default function Card({ card }) {
           <p className={styles.cardItemText}>{card.synopsis}</p>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }

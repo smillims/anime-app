@@ -1,0 +1,65 @@
+.content {
+  max-width: 1400px;
+
+  font-size: 18px;
+
+  margin: 20px auto;
+  padding: 20px;
+
+  background-color: white;
+}
+
+.container {
+  display: flex;
+}
+
+.poster {
+  max-width: 225px;
+  max-height: 365px;
+}
+
+.information {
+  padding: 0px 20px;
+}
+
+.header {
+  position: relative;
+}
+.header span {
+  font-size: 20px;
+}
+.header span::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+
+  background-image: url(../../img/icons/star.png);
+
+  position: absolute;
+  top: 0px;
+  left: 85px;
+}
+.header h1 {
+  font-size: 50px;
+
+  padding: 10px 0;
+}
+
+.listInformation {
+  display: flex;
+}
+.listInformation li {
+  margin-bottom: 7px;
+}
+.listInformationValue {
+  margin-left: 40px;
+}
+
+.synopsis {
+  margin-top: 10px;
+}
+.synopsis p {
+  line-height: 1.4;
+
+  padding: 7px 0;
+}

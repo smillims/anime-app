@@ -15,12 +15,15 @@ export const useAnime = () => {
           const error = `No results were found for "${currentTitle}".
           Make sure the request was submitted without errors.`;
 
-          const { message, code } = data;
-          if (code !== '200' && message) throw Error(error);
+          const { status, message } = data;
+
+          if (status !== '200' && message) throw Error(error);
 
           const filterAnime = filterAnimeByTitle(data);
 
-          if (!filterAnime.length) throw Error(error);
+          if (!filterAnime.length) {
+            throw Error(error);
+          }
 
           setError(null);
           setAnimeSearch(filterAnime);
@@ -43,7 +46,9 @@ export const useAnime = () => {
     currentTitle,
     setCurrentTitle,
     error,
+    setError,
     isDataLoading,
+    setIsDataLoading,
     animeSearch,
   };
 };

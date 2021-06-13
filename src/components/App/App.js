@@ -3,13 +3,27 @@ import { useAnime } from '../../customHooks';
 import Header from '../Header';
 import SortForm from '../SortForm';
 import AnimeCardsResults from '../AnimeCardsResults';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import AnimeInfo from '../AnimeInfo';
 
-export default function App() {
+function App() {
+  return (
+    <BrowserRouter>
+      <Header />
+      <Switch>
+        <Route path="/anime-info/:id" component={AnimeInfo} />
+        <Route path="/" component={Main} />
+      </Switch>
+    </BrowserRouter>
+  );
+}
+
+function Main() {
   const { currentTitle, setCurrentTitle, error, isDataLoading, animeSearch } = useAnime();
 
   return (
     <>
-      <Header />
+      {/*<Header />*/}
       <SortForm onSubmit={setCurrentTitle} value={currentTitle} />
       <AnimeCardsResults
         currentTitle={currentTitle}
@@ -20,3 +34,5 @@ export default function App() {
     </>
   );
 }
+
+export default App;
