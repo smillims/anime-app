@@ -18,6 +18,8 @@ function App() {
   );
 }
 
+console.log('test')
+
 function Main() {
   const { currentTitle, setCurrentTitle, error, isDataLoading, animeSearch } = useAnime();
 
