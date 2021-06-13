@@ -27,6 +27,8 @@
 }
 .header span {
   font-size: 20px;
+
+  margin-left: 12px;
 }
 .header span::after {
   content: '';
@@ -36,8 +38,8 @@
   background-image: url(../../img/icons/star.png);
 
   position: absolute;
-  top: 0px;
-  left: 85px;
+  top: 1px;
+  left: -10px;
 }
 .header h1 {
   font-size: 50px;
