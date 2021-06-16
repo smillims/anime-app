@@ -2,12 +2,9 @@ import React from 'react';
 import styles from './style.css';
 
 function AnimeDetailPage({ animeDetail }) {
-  function checkOnNull(item) {
-    if (item === null || item === undefined) {
-      return <b>No info</b>;
-    }
-    return item;
-  }
+  if (Object.keys(animeDetail).length == 0) return 'Please, wait some seconds or reload the page';
+
+  const checkOnNull = item => (item === null ? <b>No info</b> : item);
 
   const {
     image_url,
@@ -20,6 +17,9 @@ function AnimeDetailPage({ animeDetail }) {
     premiered,
     synopsis,
     rating,
+    aired,
+    //!!on future update
+    //trailer_url,
   } = animeDetail;
 
   return (
@@ -38,6 +38,7 @@ function AnimeDetailPage({ animeDetail }) {
               <li>Status</li>
               <li>Duration</li>
               <li>Premiered</li>
+              <li>Aired</li>
               <li>Rating</li>
             </ul>
             <ul className={styles.listInformationValue}>
@@ -46,14 +47,23 @@ function AnimeDetailPage({ animeDetail }) {
               <li>{checkOnNull(status)}</li>
               <li>{checkOnNull(duration)}</li>
               <li>{checkOnNull(premiered)}</li>
+              <li>{checkOnNull(aired.string)}</li>
               <li>{checkOnNull(rating)}</li>
             </ul>
           </div>
         </div>
       </div>
       <div className={styles.synopsis}>
+        <h3>Synopsis</h3>
         <p>{checkOnNull(synopsis)}</p>
       </div>
+      //!!on future update
+      {/*<div className={styles.trailer}>
+        <h3>Trailer</h3>
+        <form className={styles.trailerForm}>
+          <iframe name="iframe" src={trailer_url}></iframe>
+        </form>
+      </div>*/}
     </div>
   );
 }

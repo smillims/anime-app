@@ -3,7 +3,7 @@ import styles from './style.css';
 import Card from '../Card';
 
 export default function CardsList({ animeSearch }) {
-  if (Object.keys(animeSearch).length == 0) return;
+  if (Object.keys(animeSearch).length == 0) return 'Please, wait some seconds or reload the page';
 
   return (
     <main className={styles.main}>
