@@ -57,7 +57,6 @@ function AnimeDetailPage({ animeDetail }) {
         <h3>Synopsis</h3>
         <p>{checkOnNull(synopsis)}</p>
       </div>
-      //!!on future update
       {/*<div className={styles.trailer}>
         <h3>Trailer</h3>
         <form className={styles.trailerForm}>
