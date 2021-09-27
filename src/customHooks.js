@@ -8,33 +8,36 @@ export const useAnime = () => {
   const [animeSearch, setAnimeSearch] = useState({});
 
   useEffect(() => {
-    setIsDataLoading(true);
-    if (currentTitle) {
+    if (currentTitle !== '') {
+      setIsDataLoading(true);
       validateAndLoadData(currentTitle)
         .then(data => {
+          if (data === undefined) {
+            console.log('UNDEFINED');
+          }
+          const { status, message } = data;
           const error = `No results were found for "${currentTitle}".
           Make sure the request was submitted without errors.`;
+          const filterAnime = filterAnimeByTitle(data);
 
-          const { status, message } = data;
+          console.log(data, filterAnime, currentTitle);
 
           if (status !== '200' && message) throw Error(error);
 
-          const filterAnime = filterAnimeByTitle(data);
-
-          if (!filterAnime.length) {
+          if (filterAnime.length === 0) {
             throw Error(error);
           }
 
           setError(null);
           setAnimeSearch(filterAnime);
         })
-
-        .catch(setError)
+        .catch(err => setError(err))
         .finally(() => setIsDataLoading(false));
     }
   }, [currentTitle]);
 
   function filterAnimeByTitle(data) {
+    //начать дебажить тут
     return data.results.filter(anime => {
       if (anime.rated === 'Rx') return false;
       else if (!anime.title.toLowerCase().includes(currentTitle.toLowerCase())) return false;
